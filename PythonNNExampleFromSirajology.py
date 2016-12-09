@@ -98,12 +98,6 @@ print l2
 
 # See how the final output closely approximates the true output [0, 1, 1, 0]. If you increase the number of interations in the training loop (currently 60000), the final output will be even closer. 
 
-# In[8]:
-
-get_ipython().run_cell_magic(u'HTML', u'', u'<iframe width="560" height="315" src="https://www.youtube.com/embed/h3l4qz76JhQ" frameborder="0" allowfullscreen></iframe>')
-
-
-# In[ ]:
 
 
 
