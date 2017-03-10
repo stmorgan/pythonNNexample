@@ -11758,7 +11758,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>  <span class="c1"># Note: there is a typo on this line in the video</span>
@@ -11782,7 +11782,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">nonlin</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">deriv</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>  <span class="c1"># Note: there is a typo on this line in the video</span>
@@ -11809,7 +11809,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#input data</span>
@@ -11836,7 +11836,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#output data</span>
@@ -11863,7 +11863,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -11886,7 +11886,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#synapses</span>
@@ -11911,11 +11911,13 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#training step</span>
-<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">60000</span><span class="p">):</span>  
+<span class="c1"># Python2 Note: In the follow command, you may improve </span>
+<span class="c1">#   performance by replacing &#39;range&#39; with &#39;xrange&#39;. </span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">60000</span><span class="p">):</span>  
     
     <span class="c1"># Calculate forward through the network.</span>
     <span class="n">l0</span> <span class="o">=</span> <span class="n">X</span>
@@ -11925,7 +11927,7 @@ div#notebook {
     <span class="c1"># Back propagation of errors using the chain rule. </span>
     <span class="n">l2_error</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">l2</span>
     <span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">%</span> <span class="mi">10000</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>   <span class="c1"># Only print the error every 10000 steps, to save time and limit the amount of output. </span>
-        <span class="k">print</span> <span class="s2">&quot;Error: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">l2_error</span><span class="p">)))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Error: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">l2_error</span><span class="p">))))</span>
         
     <span class="n">l2_delta</span> <span class="o">=</span> <span class="n">l2_error</span><span class="o">*</span><span class="n">nonlin</span><span class="p">(</span><span class="n">l2</span><span class="p">,</span> <span class="n">deriv</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     
@@ -11937,8 +11939,8 @@ div#notebook {
     <span class="n">syn1</span> <span class="o">+=</span> <span class="n">l1</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">l2_delta</span><span class="p">)</span>
     <span class="n">syn0</span> <span class="o">+=</span> <span class="n">l0</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">l1_delta</span><span class="p">)</span>
     
-<span class="k">print</span> <span class="s2">&quot;Output after training&quot;</span>
-<span class="k">print</span> <span class="n">l2</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Output after training&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
     
     
 </pre></div>
@@ -11984,10 +11986,12 @@ Output after training
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">HTML</span>
+#The following line is for embedding the YouTube video 
+#   in this Jupyter Notebook. You may remove it without peril. 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/h3l4qz76JhQ&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 </pre></div>
 
@@ -12002,6 +12006,8 @@ Output after training
 <div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
+#The following line is for embedding the YouTube video 
+#   in this Jupyter Notebook. You may remove it without peril. 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/h3l4qz76JhQ" frameborder="0" allowfullscreen></iframe>
 </div>
 
