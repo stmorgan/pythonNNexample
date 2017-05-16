@@ -8,5 +8,4 @@ PythonNNExampleFromSirajology.ipynb is a Jupyter Notebook version. This is not n
 PythonNNExampleFromSirajology.py This is just Python script. Annotations appear in comments. 
 
 Scott Morgan, 
-scott@scottmorgan.ca
 November 2016
