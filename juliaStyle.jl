@@ -1,8 +1,3 @@
-# julia example based on:               https://www.youtube.com/embed/h3l4qz76JhQ
-# This runs much faster on my machine than the python(with numpy) version. Of course the objective
-# was not really to compare speed. Execution time may also vary and since I only ran the test once 
-# this can hardly be called a fair comparison. On the other hand the julia code could still be 
-# optimised to run faster but I'm trying to stick with the example.
 # ===============================================================================================
 # python(with numpy)                    13.909520864486694
 # julia                               ÷ 3.449227
